@@ -8,8 +8,8 @@ const { Kafka } = require('kafkajs')
 const s3Client = new S3Client({
   region: 'ap-south-1',
   credentials: {
-    accessKeyId: 'AKIAVIOZFY3JSI4OCQ5J',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: '/d',
   },
 })
 
@@ -23,8 +23,8 @@ const kafka = new Kafka({
     ca: [fs.readFileSync(path.join(__dirname, 'kafka.pem'), 'utf-8')],
   },
   sasl: {
-    username: 'avnadmin',
-    password: 'AVNS_v87vLxGHue8agt6wWn-',
+    username: '',
+    password: '',
     mechanism: 'plain',
   },
 })

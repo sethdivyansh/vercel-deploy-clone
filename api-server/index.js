@@ -25,17 +25,17 @@ const kafka = new Kafka({
     ca: [fs.readFileSync(path.join(__dirname, 'kafka.pem'), 'utf-8')],
   },
   sasl: {
-    username: 'avnadmin',
-    password: 'AVNS_v87vLxGHue8agt6wWn-',
+    username: '',
+    password: '',
     mechanism: 'plain',
   },
 })
 
 const client = createClient({
-  host: 'https://avnadmin:AVNS_ijgu8ZCq1A0kh0FoCnk@clickhouse-15020db1-vercel-clone-divyansh.c.aivencloud.com:10032',
+  host: 'https://avnadmin:@clickhouse-15020db1-vercel-clone-divyansh.c.aivencloud.com:10032',
   database: 'default',
-  username: 'avnadmin',
-  password: 'AVNS_ijgu8ZCq1A0kh0FoCnk',
+  username: '',
+  password: '',
 })
 
 const consumer = kafka.consumer({ groupId: 'api-server-logs-consumer' })
@@ -54,8 +54,8 @@ app.use(cors())
 
 const ecsClient = new ECSClient({
   credentials: {
-    accessKeyId: 'AKIAVIOZFY3JSI4OCQ5J',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: '/d',
   },
 })
 
@@ -114,11 +114,8 @@ app.post('/deploy', async (req, res) => {
       awsvpcConfiguration: {
         assignPublicIp: 'ENABLED',
         subnets: [
-          'subnet-0ecfdb0c70b133f67',
-          'subnet-02e57163c008b62b0',
-          'subnet-0968eec9419bc164b',
         ],
-        securityGroups: ['sg-0fa82c6b10f227fd3'],
+        securityGroups: [''],
       },
     },
     overrides: {
